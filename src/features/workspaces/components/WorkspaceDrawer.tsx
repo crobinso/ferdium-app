@@ -135,6 +135,7 @@ class WorkspaceDrawer extends Component<IProps> {
         <div className={classes.workspaces}>
           <WorkspaceDrawerItem
             name={intl.formatMessage(messages.allServices)}
+            icon="*"
             onClick={() => {
               workspaceActions.deactivate();
               workspaceActions.toggleWorkspaceDrawer();
@@ -147,6 +148,7 @@ class WorkspaceDrawer extends Component<IProps> {
             <WorkspaceDrawerItem
               key={workspace.id}
               name={workspace.name}
+              icon={(workspace.name || ' ').slice(0, 1)}
               isActive={actualWorkspace === workspace}
               onClick={() => {
                 if (actualWorkspace === workspace) {
